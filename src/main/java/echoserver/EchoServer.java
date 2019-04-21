@@ -21,6 +21,7 @@ public class EchoServer {
   public static void main(String[] args) throws Exception {
 //    if (args.length != 1) {
 //      System.err.println("Usage " + EchoServer.class.getSimpleName() + " <port>");
+//      return;
 //    }
 //    int port = Integer.parseInt(args[0]);
     int port = 1234;
@@ -39,7 +40,7 @@ public class EchoServer {
           .localAddress(new InetSocketAddress(port))
 //      Sets the socket address using the specified port
           .childHandler(new ChannelInitializer<SocketChannel>() {
-//            Adds an EchoServerHandler to the Channel’s ChannelPipeline
+            //            Adds an EchoServerHandler to the Channel’s ChannelPipeline
             @Override
             protected void initChannel(SocketChannel socketChannel) throws Exception {
               socketChannel.pipeline().addLast(serverHandler);
